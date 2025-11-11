@@ -1,0 +1,18 @@
+{
+  "updated_at": "2025-11-10T12:00:00Z",
+  "platform_status": "outage",
+  "uptime": {
+    "last_24h": 92.0,
+    "last_7d": 97.5
+  },
+  "backups": {
+    "policy": "Nightly backups, 7-day retention, off-site object storage.",
+    "last_successful_backup": "2025-11-09T02:01:30Z",
+    "last_backup_status": "failed"
+  },
+  "infrastructure": {
+    "model": "Dedicated droplet per client + managed database cluster.",
+    "regions": ["nyc3"],
+    "notes": "Service disruption in progress. Updates via status page."
+  }
+}

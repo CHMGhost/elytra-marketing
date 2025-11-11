@@ -1,0 +1,47 @@
+# DigitalOcean App Platform Spec
+# This file defines the app configuration for deployment on DO App Platform
+# Can be uploaded via dashboard or used with doctl CLI
+
+name: elytra-marketing
+region: nyc
+
+services:
+  - name: web
+    github:
+      repo: CHMGhost/elytra-marketing
+      branch: main
+      deploy_on_push: true
+    
+    build_command: npm run build
+    run_command: npm start
+    
+    environment_slug: node-js
+    instance_count: 1
+    instance_size_slug: basic-xxs
+    
+    http_port: 3000
+    
+    envs:
+      - key: NEXT_PUBLIC_STATUS_JSON_URL
+        value: "https://status.elytracloud.com/status.json"
+        scope: RUN_AND_BUILD_TIME
+      
+      - key: NODE_ENV
+        value: "production"
+        scope: RUN_AND_BUILD_TIME
+    
+    routes:
+      - path: /
+    
+    health_check:
+      http_path: /
+      initial_delay_seconds: 10
+      period_seconds: 10
+      timeout_seconds: 5
+      success_threshold: 1
+      failure_threshold: 3
+
+domains:
+  - domain: elytracloud.com
+    type: PRIMARY
+    zone: elytracloud.com

@@ -1,0 +1,18 @@
+{
+  "updated_at": "2025-11-09T10:00:00Z",
+  "platform_status": "operational",
+  "uptime": {
+    "last_24h": 100.0,
+    "last_7d": 99.98
+  },
+  "backups": {
+    "policy": "Nightly backups, 7-day retention, off-site object storage.",
+    "last_successful_backup": "2025-11-09T02:01:30Z",
+    "last_backup_status": "success"
+  },
+  "infrastructure": {
+    "model": "Dedicated droplet per client + managed database cluster.",
+    "regions": ["nyc3"],
+    "notes": "All sites behind managed HTTPS and monitored 24/7."
+  }
+}

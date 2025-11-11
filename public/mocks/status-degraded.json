@@ -1,0 +1,18 @@
+{
+  "updated_at": "2025-11-10T12:00:00Z",
+  "platform_status": "degraded",
+  "uptime": {
+    "last_24h": 98.5,
+    "last_7d": 99.2
+  },
+  "backups": {
+    "policy": "Nightly backups, 7-day retention, off-site object storage.",
+    "last_successful_backup": "2025-11-10T02:01:30Z",
+    "last_backup_status": "warning"
+  },
+  "infrastructure": {
+    "model": "Dedicated droplet per client + managed database cluster.",
+    "regions": ["nyc3"],
+    "notes": "Minor performance degradation detected. Engineering team investigating."
+  }
+}
