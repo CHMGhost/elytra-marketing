@@ -7,11 +7,34 @@ import {
   Shield,
   Sparkles,
 } from "lucide-react";
+import { ContactSection } from "@/components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Pricing Plans | Elytracloud - Shell, Wing, Apex",
   description:
     "Shell, Wing, and Apex managed WordPress plans that scale protection, performance, and control as you grow.",
+  openGraph: {
+    title: "Pricing Plans | Elytracloud - Shell, Wing, Apex",
+    description:
+      "Shell, Wing, and Apex managed WordPress plans that scale protection, performance, and control as you grow.",
+    url: "https://elytracloud.com/pricing",
+    siteName: "Elytracloud",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Elytracloud pricing tiers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Pricing Plans | Elytracloud - Shell, Wing, Apex",
+    description:
+      "Shell, Wing, and Apex managed WordPress plans that scale protection, performance, and control as you grow.",
+    images: ["/og-default.png"],
+  },
 };
 
 export default function PricingPage() {
@@ -24,14 +47,14 @@ export default function PricingPage() {
             Shell, Wing, Apex — managed WordPress that grows with you
           </h1>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-            Elytracloud layers protection, performance, and control just like an elytra shields a wing.
-            Start with Shell’s hardened foundation, add Wing for lift, and reach Apex when uptime is revenue.
+            Lock these rates for life as one of the first 10 Elytracloud clients. Fully managed WordPress hosting with
+            dedicated infrastructure.
           </p>
           <div className="inline-flex items-center gap-2 rounded-lg border border-blue-600/40 bg-blue-600/15 px-4 py-3 text-sm text-blue-200">
             <Sparkles className="h-4 w-4" />
-            <span>Founding beta pricing — limited to the first 10 teams.</span>
+            <span>🎉 Founding Member Beta – Save 25% on every tier.</span>
           </div>
-          <p className="text-xs text-neutral-500">Annual plans save 2 months.</p>
+          <p className="text-xs text-neutral-500">Annual plans save 2 additional months.</p>
         </div>
 
         <p className="mt-12 max-w-3xl mx-auto text-center text-neutral-400">
@@ -39,6 +62,10 @@ export default function PricingPage() {
           to <span className="font-semibold text-blue-300">Wing</span>{" "}
           to <span className="font-semibold text-indigo-300">Apex</span>. Each layer adds more protection,
           performance, and direct control over your WordPress environment.
+        </p>
+
+        <p className="mt-6 max-w-3xl mx-auto text-center text-neutral-400">
+          We price like infrastructure, not marketing. Each site runs on a dedicated stack—no shared cPanel. You’re paying for isolation, observability, and a human you can reach when it matters.
         </p>
 
         {/* Pricing Cards */}
@@ -57,13 +84,17 @@ export default function PricingPage() {
               </p>
             </div>
 
-            <div className="mt-6 border-t border-neutral-800 pt-6">
+            <div className="mt-6 border-t border-neutral-800 pt-6 space-y-4">
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-4xl font-bold text-neutral-100">$39</span>
+                <span className="text-4xl font-bold text-neutral-100 line-through opacity-60">$39</span>
+                <span className="text-4xl font-bold text-blue-400">$29</span>
                 <span className="text-neutral-500">/month</span>
               </div>
-              <p className="mt-1 text-neutral-500">or $390/year (save $78)</p>
-              <div className="mt-3 text-center text-xs text-neutral-500">
+              <p className="text-center text-neutral-500">or $290/year (save $58)</p>
+              <span className="inline-block bg-blue-600/20 border border-blue-600/30 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mx-auto">
+                🎉 Founding Member Beta – Save 25%
+              </span>
+              <div className="text-center text-xs text-neutral-500">
                 Founding beta pricing • limited to the first 10 teams
               </div>
             </div>
@@ -134,13 +165,17 @@ export default function PricingPage() {
               </p>
             </div>
 
-            <div className="mt-6 border-t border-neutral-800 pt-6">
+            <div className="mt-6 border-t border-neutral-800 pt-6 space-y-4">
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-4xl font-bold text-neutral-100">$79</span>
+                <span className="text-4xl font-bold text-neutral-100 line-through opacity-60">$79</span>
+                <span className="text-4xl font-bold text-blue-400">$59</span>
                 <span className="text-neutral-500">/month</span>
               </div>
-              <p className="mt-1 text-neutral-500">or $790/year (save $158)</p>
-              <div className="mt-3 text-center text-xs text-neutral-500">
+              <p className="text-center text-neutral-500">or $590/year (save $118)</p>
+              <span className="inline-block bg-blue-600/20 border border-blue-600/30 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mx-auto">
+                🎉 Founding Member Beta – Save 25%
+              </span>
+              <div className="text-center text-xs text-neutral-500">
                 Founding beta pricing • limited to the first 10 teams
               </div>
             </div>
@@ -201,13 +236,17 @@ export default function PricingPage() {
               </p>
             </div>
 
-            <div className="mt-6 border-t border-neutral-800 pt-6">
+            <div className="mt-6 border-t border-neutral-800 pt-6 space-y-4">
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-4xl font-bold text-neutral-100">$149</span>
+                <span className="text-4xl font-bold text-neutral-100 line-through opacity-60">$149</span>
+                <span className="text-4xl font-bold text-blue-400">$112</span>
                 <span className="text-neutral-500">/month</span>
               </div>
-              <p className="mt-1 text-neutral-500">or $1,490/year (save $298)</p>
-              <div className="mt-3 text-center text-xs text-neutral-500">
+              <p className="text-center text-neutral-500">or $1,120/year (save $224)</p>
+              <span className="inline-block bg-blue-600/20 border border-blue-600/30 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full mx-auto">
+                🎉 Founding Member Beta – Save 25%
+              </span>
+              <div className="text-center text-xs text-neutral-500">
                 Founding beta pricing • limited to the first 10 teams
               </div>
             </div>
@@ -674,30 +713,7 @@ export default function PricingPage() {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-20 max-w-4xl mx-auto text-center space-y-6 border border-neutral-800 rounded-xl p-12 bg-neutral-950/60">
-          <h2 className="text-3xl font-bold text-neutral-100">
-            Questions about hosting?
-          </h2>
-          <p className="text-xl text-neutral-400">
-            Get in touch directly — built and maintained by a solo developer who
-            actually answers emails.
-          </p>
-          <div className="flex gap-4 justify-center">
-            <a
-              href="mailto:hello@elytracloud.com"
-              className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"
-            >
-              Get in Touch
-            </a>
-            <a
-              href="/status"
-              className="px-8 py-4 border border-neutral-700 hover:border-neutral-600 text-neutral-200 font-semibold rounded-lg transition"
-            >
-              View Platform Status
-            </a>
-          </div>
-        </div>
+        <ContactSection type="billing" />
       </div>
     </main>
   );

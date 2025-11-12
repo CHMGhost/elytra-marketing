@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Activity, HardDrive, Server } from "lucide-react";
 import { PlatformStatusCard } from "@/components/PlatformStatusCard";
+import { ContactSection } from "@/components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Elytracloud - Enterprise WordPress Hosting",
@@ -14,6 +15,20 @@ export const metadata: Metadata = {
     url: "https://elytracloud.com",
     siteName: "Elytracloud",
     type: "website",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Elytracloud managed WordPress hosting",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Elytracloud - Enterprise WordPress Hosting",
+    description: "Dedicated infrastructure, automated backups, and 24/7 monitoring.",
+    images: ["/og-default.png"],
   },
 };
 
@@ -43,12 +58,12 @@ export default function HomePage() {
             >
               Explore Managed Plans
             </Link>
-            <Link
-              href="/features"
+            <a
+              href="mailto:hello@elytracloud.com?subject=Elytracloud%20Question"
               className="px-6 py-3 border border-neutral-700 hover:border-neutral-600 text-neutral-200 font-semibold rounded-lg transition"
             >
-              Why Elytracloud
-            </Link>
+              Contact Support
+            </a>
             <Link
               href="/status"
               className="px-6 py-3 border border-neutral-800/80 hover:border-neutral-600 text-neutral-400 text-sm font-medium rounded-lg transition hidden md:inline-flex"
@@ -128,6 +143,8 @@ export default function HomePage() {
         </div>
       </div>
 
+      <ContactSection type="general" />
+
       {/* Footer */}
       <footer className="border-t border-neutral-800 py-8">
         <div className="container mx-auto px-4 text-center text-neutral-500 text-sm">
@@ -151,6 +168,10 @@ export default function HomePage() {
             <span>·</span>
             <Link href="/terms" className="hover:text-neutral-300 transition">
               Terms
+            </Link>
+            <span>·</span>
+            <Link href="/refund" className="hover:text-neutral-300 transition">
+              Refunds
             </Link>
           </div>
         </div>

@@ -1,11 +1,34 @@
 import type { Metadata } from "next";
 import { CheckCircle, AlertTriangle, XCircle, HelpCircle } from "lucide-react";
 import { PlatformStatusCard } from "@/components/PlatformStatusCard";
+import { ContactSection } from "@/components/ContactSection";
 
 export const metadata: Metadata = {
   title: "Platform Status | Elytracloud",
   description:
     "Real-time status and health information for the Elytracloud hosting platform.",
+  openGraph: {
+    title: "Platform Status | Elytracloud",
+    description:
+      "Real-time status and health information for the Elytracloud hosting platform.",
+    url: "https://elytracloud.com/status",
+    siteName: "Elytracloud",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "Elytracloud platform status",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Platform Status | Elytracloud",
+    description:
+      "Real-time status and health information for the Elytracloud hosting platform.",
+    images: ["/og-default.png"],
+  },
 };
 
 export default function StatusPage() {
@@ -64,13 +87,17 @@ export default function StatusPage() {
 
           <div className="text-center pt-4 space-y-3">
             <p className="text-xs text-neutral-500">
-              Questions about platform status?{" "}
+              Questions about platform status?
+            </p>
+            <p className="text-sm text-neutral-500">
+              Need immediate help?{" "}
               <a
-                href="mailto:support@elytracloud.com"
-                className="text-neutral-400 hover:text-neutral-200 underline"
+                href="mailto:support@elytracloud.com?subject=Elytracloud%20Status%20Inquiry"
+                className="text-blue-400 hover:text-blue-300 underline"
               >
-                Contact our team
+                Email support@elytracloud.com
               </a>
+              .
             </p>
             <a
               href="/uptime"
@@ -81,6 +108,8 @@ export default function StatusPage() {
           </div>
         </div>
       </div>
+
+      <ContactSection type="support" />
     </main>
   );
 }
