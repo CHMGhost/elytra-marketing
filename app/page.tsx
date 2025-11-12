@@ -1,4 +1,21 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { Activity, HardDrive, Server } from "lucide-react";
 import { PlatformStatusCard } from "@/components/PlatformStatusCard";
+
+export const metadata: Metadata = {
+  title: "Elytracloud - Enterprise WordPress Hosting",
+  description:
+    "Dedicated infrastructure, automated backups, and 24/7 monitoring for serious WordPress sites.",
+  openGraph: {
+    title: "Elytracloud - Enterprise WordPress Hosting",
+    description:
+      "Dedicated infrastructure, automated backups, and 24/7 monitoring.",
+    url: "https://elytracloud.com",
+    siteName: "Elytracloud",
+    type: "website",
+  },
+};
 
 /**
  * Homepage
@@ -11,27 +28,37 @@ export default function HomePage() {
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h1 className="text-5xl md:text-6xl font-bold text-neutral-100">
-            Enterprise WordPress Hosting
+            Managed WordPress, Purpose-Built for Reliability
           </h1>
           <p className="text-xl text-neutral-300 max-w-2xl mx-auto">
-            Dedicated infrastructure, automated backups, and 24/7 monitoring.
-            Built for agencies and businesses that demand reliability.
+            Fully managed WordPress on isolated, dedicated infrastructure. We handle updates,
+            security, backups, and uptime — you focus on your content, clients, and product.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex gap-4 justify-center">
-            <a
-              href="#contact"
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Link
+              href="/pricing"
               className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition"
             >
-              Get Started
-            </a>
-            <a
-              href="/status"
+              Explore Managed Plans
+            </Link>
+            <Link
+              href="/features"
               className="px-6 py-3 border border-neutral-700 hover:border-neutral-600 text-neutral-200 font-semibold rounded-lg transition"
             >
+              Why Elytracloud
+            </Link>
+            <Link
+              href="/status"
+              className="px-6 py-3 border border-neutral-800/80 hover:border-neutral-600 text-neutral-400 text-sm font-medium rounded-lg transition hidden md:inline-flex"
+            >
               Platform Status
-            </a>
+            </Link>
+          </div>
+          <div className="mt-4 inline-flex items-center justify-center gap-2 text-sm text-blue-300 bg-blue-600/10 border border-blue-600/30 px-4 py-2 rounded-lg mx-auto">
+            <span className="font-semibold">Founding Member Beta</span>
+            <span>Limited seats · Locked founding pricing · White-glove onboarding</span>
           </div>
         </div>
 
@@ -51,40 +78,53 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Feature 1 */}
             <div className="rounded-xl border border-neutral-800 bg-neutral-950/60 p-6 space-y-3">
-              <div className="text-3xl">🚀</div>
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/10 border border-blue-600/40">
+                <Server className="w-5 h-5 text-blue-400" />
+              </div>
               <h3 className="text-xl font-semibold text-neutral-100">
-                Dedicated Resources
+                Dedicated Environments
               </h3>
               <p className="text-neutral-400">
-                Each client gets their own DigitalOcean droplet. No shared
-                hosting, no performance bottlenecks.
+                Every site runs on its own isolated compute stack. No noisy neighbors,
+                predictable performance, and clean security boundaries.
               </p>
             </div>
 
             {/* Feature 2 */}
             <div className="rounded-xl border border-neutral-800 bg-neutral-950/60 p-6 space-y-3">
-              <div className="text-3xl">💾</div>
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/10 border border-blue-600/40">
+                <HardDrive className="w-5 h-5 text-blue-400" />
+              </div>
               <h3 className="text-xl font-semibold text-neutral-100">
                 Automated Backups
               </h3>
               <p className="text-neutral-400">
-                Nightly backups with 7-day retention, stored securely in
-                off-site object storage.
+                Nightly off-site backups stored in object storage, with guided restore
+                support if an update or deploy goes sideways.
               </p>
             </div>
 
             {/* Feature 3 */}
             <div className="rounded-xl border border-neutral-800 bg-neutral-950/60 p-6 space-y-3">
-              <div className="text-3xl">📊</div>
+              <div className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-blue-600/10 border border-blue-600/40">
+                <Activity className="w-5 h-5 text-blue-400" />
+              </div>
               <h3 className="text-xl font-semibold text-neutral-100">
                 24/7 Monitoring
               </h3>
               <p className="text-neutral-400">
-                Automated uptime monitoring and instant alerts. We know about
-                issues before you do.
+                Continuous uptime monitoring and alerting. If something looks off, we see
+                it quickly and act—backed by a public status page for full transparency.
               </p>
             </div>
           </div>
+        </div>
+        <div className="mt-12 max-w-3xl mx-auto text-center text-neutral-400">
+          <p>
+            Built for agencies, SaaS products, and businesses that have
+            outgrown cheap shared hosting and want dedicated, managed WordPress
+            without hiring an in-house SRE.
+          </p>
         </div>
       </div>
 
@@ -93,17 +133,25 @@ export default function HomePage() {
         <div className="container mx-auto px-4 text-center text-neutral-500 text-sm">
           <p>&copy; 2025 Elytracloud. All rights reserved.</p>
           <div className="mt-2 space-x-4">
-            <a href="/status" className="hover:text-neutral-300 transition">
+            <Link href="/pricing" className="hover:text-neutral-300 transition">
+              Pricing
+            </Link>
+            <span>·</span>
+            <Link href="/features" className="hover:text-neutral-300 transition">
+              Features
+            </Link>
+            <span>·</span>
+            <Link href="/status" className="hover:text-neutral-300 transition">
               Status
-            </a>
+            </Link>
             <span>·</span>
-            <a href="#" className="hover:text-neutral-300 transition">
+            <Link href="/privacy" className="hover:text-neutral-300 transition">
               Privacy
-            </a>
+            </Link>
             <span>·</span>
-            <a href="#" className="hover:text-neutral-300 transition">
+            <Link href="/terms" className="hover:text-neutral-300 transition">
               Terms
-            </a>
+            </Link>
           </div>
         </div>
       </footer>
@@ -111,8 +159,3 @@ export default function HomePage() {
   );
 }
 
-export const metadata = {
-  title: "Elytracloud - Enterprise WordPress Hosting",
-  description:
-    "Dedicated infrastructure, automated backups, and 24/7 monitoring for WordPress sites.",
-};
